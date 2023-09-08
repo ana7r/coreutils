@@ -30,6 +30,11 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   }
 
+  if (strcmp("--help", argv[1]) == 0) {
+    usage(argc, argv);
+    return EXIT_SUCCESS;
+  }
+
   char *c = basename(argv[1]);
   if (argc > 2)
     remove_suffix(c, argv[2]);
